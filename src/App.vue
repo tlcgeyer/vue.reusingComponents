@@ -1,15 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h2>App Components</h2>
+    <input type="text" placeholder="Say something.." v-model="msg">
+    <Products :greetings="msg"/> <!--assigning a variable to a property, (msg is a variable)-->
+    <Products greetings="Class1"/> <!--child component-->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Products from './components/Products.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      msg: ''
+    
+  }
+  },
   components: {
-    HelloWorld
+    Products
   }
 }
 </script>
@@ -20,7 +30,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:white;
   margin-top: 60px;
 }
+
 </style>
